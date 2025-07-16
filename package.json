@@ -1,0 +1,31 @@
+{
+  "name": "namasthe-react",
+  "version": "1.0.0",
+  "description": "learning react by abhilasha",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhiandnow30/namasthe-react.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "abhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhiandnow30/namasthe-react/issues"
+  },
+  "homepage": "https://github.com/abhiandnow30/namasthe-react#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+ 
+  
+}
