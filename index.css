@@ -42,3 +42,19 @@
  .res-log{
     width:100px;
  }
+ .shimmer-card{
+    width: 200px;
+    height: 400px;
+    margin: 5;
+    background-color:#f0f0f0;
+
+ }
+ .shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+ }
+ .login{
+    padding:0 20px;
+    cursor: pointer;
+
+}

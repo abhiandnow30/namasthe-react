@@ -6,12 +6,12 @@ const ResturantCard=({resVal}) =>{
     <div className ="res-card">
       <img className="res-log " alt="res.log" src={reslog_URL}></img>
     
-    <h4>{resVal.data.name}</h4>
-    <h4>{resVal.data.cuisines.join(
+    <h4>{resVal.info.name}</h4>
+    <h4>{resVal.info.cuisines.join(
       ' '
     )}</h4>
-    <h5>{resVal.data.avgRating} stars</h5>
-      <h5>{resVal.data.deliveryTime} minutes</h5>
+    <h5>{resVal.info.avgRating} stars</h5>
+      <h5>{resVal.info.sla.deliveryTime} minutes</h5>
     </div>
   );
 };
