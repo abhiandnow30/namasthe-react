@@ -6,6 +6,7 @@ const Body = () => {
    console.log("Rendered")
 
   const [listOfRestaurants, setListOfResturants]=useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText,setSearchText] = useState("");
 
   const [count,setCount] = useState(0)
@@ -21,17 +22,20 @@ const Body = () => {
   // },[count])
 
   const fetchData=async()=>{
-    const data =  await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data =  await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
     const json = await data.json();
     
-    setListOfResturants(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
     
+    setListOfResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   
   }
   const filterResturants = () => {
       const filteredRes = listOfRestaurants.filter((value,index)=>{
        return value.info.name.toLowerCase().includes(searchText.toLowerCase()) 
       })
-      setListOfResturants(filterResturants)
+      setFilteredRestaurant(filteredRes)
+
   }
   
   //conditional rendering
@@ -56,8 +60,8 @@ const Body = () => {
           Top Rated Restuarants
         </button>
       <div className="res-container">
-        {listOfRestaurants.map((res,i)=>{
-          return <ResturantCard key={i} resVal={res}/>
+        {filteredRestaurant.map((res)=>{
+          return <ResturantCard key={res.info.id} resVal={res}/>
         })}
       
      
